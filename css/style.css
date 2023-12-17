@@ -1,19 +1,183 @@
 /* GERAL */
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-#title {
-  text-align: left;
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: #080808;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Fundo e Texto Padrão */
+body {
+  background-color: black;
+}
+
+.white {
+  color: white;
+}
+
+/* Container Centralizado */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+/* Botões Padrão */
+.button,
+.button2 {
+  width: 150px;
+  text-decoration: none;
+  display: block;
+  border: none;
+  padding: 12px 24px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 50px;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  margin: 20px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+}
+
+.button {
+  background-color: #ff0000;
+  color: white;
+}
+
+.button2 {
+  background-color: #00bfff;
+  color: white;
+}
+
+/* Links Visitados */
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Efeito Hover nos Botões */
+.button:hover,
+.button2:hover {
+  transform: translateY(-7px);
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #950a00;
+}
+
+.button2:hover {
+  background-color: #0080a0;
+}
+
+/* Desativar Clique */
+.no-click {
+  pointer-events: none;
+  text-decoration: none;
+}
+
+/* Fundo de Matriz */
+#matrix {
+  position: fixed; /* Alterado para fixo para cobrir a tela inteira */
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgb(0, 0, 0);
+  opacity: 0.3;
+}
+
+
+.matrix-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+  overflow: hidden;
+}
+
+.matrix-text {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 100%;
+  font-size: 2vw;
+  line-height: 2vw;
+  font-family: monospace;
+  color: #00ff00;
+  text-shadow: 0px 0px 10px #00ff00;
+}
+
+img#rede-social {
+  width: 60px;
+  height: 100px;
+  position: absolute;
+  left: 55%;
+  top: 49%;
+  transform: translate(-50%, -50%);
+}
+
+/* Responsividade para Telas Menores que 768px */
+@media screen and (max-width: 767px) {
+  body {
+    /* Estilos específicos para telas menores */
+  }
+
+  .button {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  img#rede-social {
+    width: 40px;
+    height: 80px;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Responsividade para Telas entre 768px e 1024px */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  body {
+    /* Estilos específicos para telas de tamanho médio */
+  }
+
+  .button {
+    font-size: 14px;
+  }
+}
+
+/* Responsividade para Telas Maiores que 1024px */
+@media screen and (min-width: 1025px) {
+  body {
+    /* Estilos específicos para telas maiores */
+  }
 }
 
 /* ***CABEÇALHO*** */
 header {
   background-color: #000000;
-  color: #ff0000;
+  color: #00bfff;
   padding: 20px;
   text-align: center;
 }
@@ -28,7 +192,7 @@ nav .menu_superior {
   padding: 0 20px;
 }
 
-/* ***LEMBRAR - LISTA E ITENS*** */
+/* Lista */
 nav ul {
   list-style: none;
   margin: 0;
@@ -38,7 +202,7 @@ nav ul {
   align-items: center;
 }
 
-/* ***LEMBRAR - LISTA E ITENS: LINKS*** */
+/* Lista: Links */
 nav ul li a {
   color: #00bfff;
   text-decoration: none;
@@ -65,15 +229,8 @@ nav ul li:hover a[href="index.html"] {
 }
 
 /* ***CENTRO*** */
-body {
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  background-color: #080808;
-  color: #333;
-}
-
-.centro3D {
+.centro3D,
+.centro3D_sb {
   width: 100%;
   max-height: calc(100vh - 100px);
   display: flex;
@@ -82,18 +239,10 @@ body {
   position: relative;
 }
 
-#matrix {
-  width: 100%;
-  height: 103%;
-  border: 1px solid rgb(0, 0, 0);
-  opacity: 0.3;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
 .pilula-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Três colunas */
+  gap: 20px; /* Espaço entre as colunas */
   flex-wrap: wrap;
   justify-content: center;
   position: relative;
@@ -107,7 +256,7 @@ body {
   flex-direction: column;
   width: 300px;
   height: 50px;
-  margin: 180px;
+  margin: 150px;
   border-radius: 50px;
   background-color: #000000;
   color: #00bfff;
@@ -115,6 +264,14 @@ body {
   font-weight: bold;
   text-align: center;
   border: 2px solid #0080a0;
+  margin-bottom: 20px; /* Espaço entre as linhas */
+}
+
+/* Adicione o seguinte bloco para responsividade */
+@media screen and (max-width: 767px) {
+  .pilula-container {
+    grid-template-columns: 1fr; /* Uma coluna em telas menores */
+  }
 }
 
 .pilula a {
@@ -146,7 +303,7 @@ body {
   border: 2px solid #0080a0;
 }
 
-/* **RODAPÉ*** */
+/* Rodapé */
 footer {
   background-color: #000000;
   color: #00bfff;
@@ -162,7 +319,8 @@ footer {
   align-items: center;
 }
 
-.social-media a {
+.social-media a,
+.rodape .icon_reds img {
   text-decoration: none;
   font-size: 18px;
   font-weight: bold;
@@ -171,6 +329,10 @@ footer {
   color: #00bfff;
   padding: 5px;
   margin: 0 5px;
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  border-radius: 50%;
 }
 
 .social-media p {
@@ -185,27 +347,19 @@ footer {
   justify-content: right;
 }
 
-.rodape .icon_reds img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: 50%;
-  /* arredonda completamente os ícones */
-}
-
-.icon_reds {
-  display: inline-flex;
-  justify-content: left;
-  align-items: center;
-  width: 65px;
-  height: 65px;
-}
-
-/*SOBRE.html*/
 
 .Sobre,
 .Contato,
-.Redes_Sociais {
+.Redes_Sociais,
+.Apoie,
+.FaleConosco,
+.Ajuda,
+.Blog,
+.SejaQA,
+.SejaDev,
+.Eventos,
+.Comunidade,
+.Vagas {
   font-family: Arial, sans-serif;
   margin: 0;
   font-family: var(--bs-font-sans-serif);
@@ -218,26 +372,11 @@ footer {
   -webkit-tap-highlight-color: transparent;
 }
 
-.centro3D_sb {
-  width: 100%;
-  height: 900px;
-  max-height: calc(100vh - 100px);
-  /* altura máxima ajustada para 100vh - 100px (altura do rodapé + espaço de margem) */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  /* adicionado para permitir sobreposição */
-}
+/* sobre.html*/
 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-
-.carousel {
+/* torne-seQA.html */
+  /* Carrousel */
+  .carousel {
   position: relative;
 }
 
@@ -256,7 +395,7 @@ footer {
 
 #carouselExampleIndicators {
   width: 100%;
-  height: 100%;
+  height: 95%;
   /*PARTE DO FUNDO DA DIV MOVIE*/
   background-color: #000000;
 }
@@ -321,14 +460,14 @@ footer {
 
 .carousel-control-prev {
   position: relative;
-  margin-left: 85px;
-  margin-top: 800px;
+  margin-left: 0px;
+  margin-top: 700px;
 }
 
 .carousel-control-next {
   position: relative;
-  margin-right: 85px;
-  margin-top: 800px;
+  margin-right: 0px;
+  margin-top: 700px;
 }
 
 .carousel-item.active {
@@ -351,8 +490,9 @@ footer {
   background-color: #ff0000;
 }
 
-/*Contato*/
+/* torne-seDEV.html */
 
+/* contato.html */
 form {
   display: flex;
   flex-direction: column;
@@ -392,3 +532,5 @@ button[type="submit"] {
 button[type="submit"]:hover {
   background-color: #ff0000;
 }
+
+/* redesSociais.html */
