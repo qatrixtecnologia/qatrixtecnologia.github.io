@@ -390,7 +390,7 @@ footer {
   position: relative;
   width: 100%;
   overflow: hidden;
-  opacity: 50%;
+  opacity: 100%;
 }
 
 #carouselExampleIndicators {
