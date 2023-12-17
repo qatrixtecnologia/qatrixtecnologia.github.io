@@ -1,0 +1,536 @@
+/* GERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: #080808;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Fundo e Texto Padrão */
+body {
+  background-color: black;
+}
+
+.white {
+  color: white;
+}
+
+/* Container Centralizado */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+/* Botões Padrão */
+.button,
+.button2 {
+  width: 150px;
+  text-decoration: none;
+  display: block;
+  border: none;
+  padding: 12px 24px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 50px;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  margin: 20px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+}
+
+.button {
+  background-color: #ff0000;
+  color: white;
+}
+
+.button2 {
+  background-color: #00bfff;
+  color: white;
+}
+
+/* Links Visitados */
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Efeito Hover nos Botões */
+.button:hover,
+.button2:hover {
+  transform: translateY(-7px);
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #950a00;
+}
+
+.button2:hover {
+  background-color: #0080a0;
+}
+
+/* Desativar Clique */
+.no-click {
+  pointer-events: none;
+  text-decoration: none;
+}
+
+/* Fundo de Matriz */
+#matrix {
+  position: fixed; /* Alterado para fixo para cobrir a tela inteira */
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgb(0, 0, 0);
+  opacity: 0.3;
+}
+
+
+.matrix-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+  overflow: hidden;
+}
+
+.matrix-text {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 100%;
+  font-size: 2vw;
+  line-height: 2vw;
+  font-family: monospace;
+  color: #00ff00;
+  text-shadow: 0px 0px 10px #00ff00;
+}
+
+img#rede-social {
+  width: 60px;
+  height: 100px;
+  position: absolute;
+  left: 55%;
+  top: 49%;
+  transform: translate(-50%, -50%);
+}
+
+/* Responsividade para Telas Menores que 768px */
+@media screen and (max-width: 767px) {
+  body {
+    /* Estilos específicos para telas menores */
+  }
+
+  .button {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  img#rede-social {
+    width: 40px;
+    height: 80px;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Responsividade para Telas entre 768px e 1024px */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  body {
+    /* Estilos específicos para telas de tamanho médio */
+  }
+
+  .button {
+    font-size: 14px;
+  }
+}
+
+/* Responsividade para Telas Maiores que 1024px */
+@media screen and (min-width: 1025px) {
+  body {
+    /* Estilos específicos para telas maiores */
+  }
+}
+
+/* ***CABEÇALHO*** */
+header {
+  background-color: #000000;
+  color: #00bfff;
+  padding: 20px;
+  text-align: center;
+}
+
+nav .menu_superior {
+  margin: 5px 0;
+  background-color: #000000;
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+/* Lista */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Lista: Links */
+nav ul li a {
+  color: #00bfff;
+  text-decoration: none;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #000000;
+}
+
+nav ul li.active a,
+nav ul li:hover a {
+  background-color: #fa1303;
+  color: #ffffff;
+  border-radius: 20px;
+}
+
+nav ul li.active a[href="index.html"],
+nav ul li:hover a[href="index.html"] {
+  background-color: #00bfff;
+  color: #ffffff;
+  border-radius: 20px;
+}
+
+/* ***CENTRO*** */
+.centro3D,
+.centro3D_sb {
+  width: 100%;
+  max-height: calc(100vh - 100px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.pilula-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Três colunas */
+  gap: 20px; /* Espaço entre as colunas */
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.pilula {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 300px;
+  height: 50px;
+  margin: 150px;
+  border-radius: 50px;
+  background-color: #000000;
+  color: #00bfff;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  border: 2px solid #0080a0;
+  margin-bottom: 20px; /* Espaço entre as linhas */
+}
+
+/* Adicione o seguinte bloco para responsividade */
+@media screen and (max-width: 767px) {
+  .pilula-container {
+    grid-template-columns: 1fr; /* Uma coluna em telas menores */
+  }
+}
+
+.pilula a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.pilula p {
+  align-items: center;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.pilula a.active,
+.pilula a:hover {
+  width: 300px;
+  height: 50px;
+  background-color: #ff0000;
+  color: #ffffff;
+  border-radius: 50px;
+  border: 2px solid #ff0000;
+}
+
+.pilula a[href="index.html"]:hover {
+  background-color: #00bfff;
+  color: #ffffff;
+  border-radius: 50px;
+  border: 2px solid #0080a0;
+}
+
+/* Rodapé */
+footer {
+  background-color: #000000;
+  color: #00bfff;
+  padding: 5px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-media a,
+.rodape .icon_reds img {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  display: inline-block;
+  background-color: #000000;
+  color: #00bfff;
+  padding: 5px;
+  margin: 0 5px;
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.social-media p {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: right;
+  background-color: #000000;
+  color: #00bfff;
+  padding: 5px;
+  margin: 0 5px;
+  margin-left: auto;
+  justify-content: right;
+}
+
+
+.Sobre,
+.Contato,
+.Redes_Sociais,
+.Apoie,
+.FaleConosco,
+.Ajuda,
+.Blog,
+.SejaQA,
+.SejaDev,
+.Eventos,
+.Comunidade,
+.Vagas {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  font-family: var(--bs-font-sans-serif);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #ffffff;
+  background-color: #000000;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* sobre.html*/
+
+/* torne-seQA.html */
+  /* Carrousel */
+  .carousel {
+  position: relative;
+}
+
+.menu_movies {
+  width: 20%;
+  margin-left: 50px; /* ajuste a margem esquerda para separar a div do carrossel */
+}
+
+.carousel-inner {
+  flex: 1;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  opacity: 50%;
+}
+
+#carouselExampleIndicators {
+  width: 100%;
+  height: 95%;
+  /*PARTE DO FUNDO DA DIV MOVIE*/
+  background-color: #000000;
+}
+
+.netflix-effect {
+  display: flex;
+  overflow: hidden;
+  padding: 0 20px;
+  margin: 45px auto;
+  width: 90%;
+  max-width: 1000px;
+  box-sizing: border-box;
+}
+
+.movie-carousel {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.movie-wrapper {
+  display: flex;
+  position: absolute;
+  transition: transform 10s ease-in-out;
+}
+
+.movie {
+  flex-direction: column;
+  justify-content: center;
+  width: 810px;
+  height: 815px;
+  margin-top: 37.5px;
+  margin-left: 150px;
+  /*PARTE DO FUNDO DA DIV MOVIE*/
+  background-color: #000000;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.movie h2 {
+  color: #ff0000;
+  text-decoration: underline;
+}
+
+.carousel-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  display: none;
+  align-items: center;
+  width: 100%;
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.carousel-control-prev {
+  position: relative;
+  margin-left: 0px;
+  margin-top: 700px;
+}
+
+.carousel-control-next {
+  position: relative;
+  margin-right: 0px;
+  margin-top: 700px;
+}
+
+.carousel-item.active {
+  color: #ffffff;
+}
+
+.carousel-control-prev-icon {
+  margin-left: 0px;
+}
+
+.carousel-control-next-icon {
+  margin-right: 0px;
+}
+
+#carouselExampleIndicators .befactive {
+  background-color: #00bfff;
+}
+
+#carouselExampleIndicators .befactive.active {
+  background-color: #ff0000;
+}
+
+/* torne-seDEV.html */
+
+/* contato.html */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="url"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+input[type="checkbox"] {
+  margin-left: 5px;
+  margin-top: 10px;
+}
+
+button[type="submit"] {
+  background-color: #00bfff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #ff0000;
+}
+
+/* redesSociais.html */
