@@ -322,15 +322,15 @@ footer {
 .social-media a,
 .rodape .icon_reds img {
   text-decoration: none;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: bold;
   display: inline-block;
   background-color: #000000;
   color: #00bfff;
   padding: 5px;
   margin: 0 5px;
-  width: 65px;
-  height: 65px;
+  width: 55px;
+  height: 55px;
   object-fit: contain;
   border-radius: 50%;
 }
