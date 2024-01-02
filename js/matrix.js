@@ -88,7 +88,7 @@ function animate() {
   }
   
   // Inicia a animação
-  setInterval(drawMatrix, 500);
+  setInterval(drawMatrix, 275);
   
   // Adiciona um ouvinte de redimensionamento
   window.addEventListener("resize", adjustCanvasSize);
